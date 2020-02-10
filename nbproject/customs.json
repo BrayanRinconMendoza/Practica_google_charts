@@ -1,0 +1,14 @@
+{
+    "elements": {},
+    "attributes": {
+        "integrity": {
+            "context": "link"
+        },
+        "name": {
+            "context": "label"
+        },
+        "namefor": {
+            "context": "label"
+        }
+    }
+}

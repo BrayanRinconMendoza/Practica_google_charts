@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--bootstrap-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+        <!--ajax api-->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <!--google charts api-->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+        <!--my javascirpt-->
+        <script type="text/JavaScript" src="js/funcionalidad.js"></script>
+        <!--my css-->
+        <link href="css/estilo.css" rel="stylesheet" type="text/css">
+    </head>
+
+    <body>
+        <header class="jumbotron jumbotron-fluid">
+            <div class="container row">
+                <div class="col-sm-3"></div>
+                <h1 class="col-sm-8"><img id="my-logo" src="imagenes/tomato.png" width="100">TOMATERIA TOMATES VERDES</h1>
+            </div>
+        </header>
+        
+        <div id="formulario" class="container">
+            <form>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <label namefor="año">Año</label>
+                        <input type="number" id="año-imput" required="required">
+                    </div>
+
+                    <div class="col-sm-4">
+                        <label for="informe">Tipo de analisis</label>
+                        <select id="tipo-inf" name="tipo-informe">
+                    <!--<option value="Mensual">Mensual</option>-->
+                            <option value="Bimestral">Bimestral</option>
+                            <option value="Trimestral">Trimestral</option>
+                            <option value="Cuatrimetral">Cuatrimestral</option>
+                        </select>
+                    </div>
+                </div>
+                        
+                <br>
+                <br>
+                <h4>Valor de las Ventas</h4>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <table>
+                            <tr>
+                                <td><label id="dato" for="valor-ene">Enero</label></td>
+                                <td><input type="text" id="valor-ene" name="valor" required="required"></td>
+                            </tr>
+                            <tr>
+                                <td><label name="dato" for="valor-feb">Febrero</label></td>
+                                <td><input type="text" id="valor-feb" name="valor" required="required"></td>
+                            </tr>
+                            <tr>
+                                <td><label name="dato" for="valor-mar">Marzo</label></td>
+                                <td><input type="text" id="valor-mar" name="valor" required="required"></td>
+                            </tr>
+                            <tr>
+                                <td><label name="dato" for="valor-abr">Abril</label></td>
+                                <td><input type="text" id="valor-abr" name="valor" required="required"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <table>
+                            <tr>
+                                <td><label name="dato" for="valor-may">Mayo</label></td>
+                                <td><input type="text" id="valor-may" name="valor" required="required"></td>
+                            </tr>
+                            <tr>
+                                <td><label name="dato" for="valor-jun">Junio</label></td>
+                                <td><input type="text" id="valor-jun" name="valor" required="required"></td>
+                            </tr>
+                            <tr>
+                                <td><label name="dato" for="valor-jul">Julio</label></td>
+                                <td><input type="text" id="valor-jul" name="valor" required="required"></td>
+                            </tr>
+                            <tr>
+                                <td><label name="dato" for="valor-ago">Agosto</label></td>
+                                <td><input type="text" id="valor-ago" name="valor" required="required"></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="col-sm-4">
+                        <table>
+                            <tr>
+                                <td><label name="dato" for="valor-sep">Septiembre</label></td>
+                                <td><input type="text" id="valor-sep" name="valor" required="required"></td>
+                            </tr>
+                            <tr>
+                                <td><label name="dato" for="valor-oct">Octubre</label></td>
+                                <td><input type="text" id="valor-oct" name="valor" ></td>
+                            </tr>
+                            <tr>
+                                <td><label name="dato" for="valor-nov">Noviembre</label></td>
+                                <td><input type="text" id="valor-nov" name="valor" ></td>
+                            </tr>
+                            <tr>
+                                <td><label name="dato" for="valor-dic">Diciembre</label></td>
+                                <td><input type="text" id="valor-dic" name="valor" ></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-sm-5"></div>
+                    <button type="button" onclick='crearGraficoPie()'>Generar Informe</button>
+                </div>
+            </form>
+        </div>
+        
+        <div id="" class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div id='barchart' style="height: 500px;"></div>
+                </div>
+                
+                <div class="col-sm-6">
+                    <div id='piechart' style="height: 500px;"></div>
+                </div>
+            </div>
+            
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <div id="table_div" style="height: 500px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <footer class="jumbotron text-center">
+            <p>Desarrollado por: </p>
+            <p>Brayan Rincón</p>
+        </footer>
+    </body>
+</html>
